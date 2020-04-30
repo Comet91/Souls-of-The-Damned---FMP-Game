@@ -1,0 +1,11 @@
+FOR UNITY USE FBX!
+
+For Better results in Unity:
+
+I went to Edit>Project Settings>Player>Other Settings>ColorSpace and set it to Linear.
+
+Thats what I did in my Unity photo example.
+
+[Set Normal map texture type in inspector to normal map and apply]
+
+
