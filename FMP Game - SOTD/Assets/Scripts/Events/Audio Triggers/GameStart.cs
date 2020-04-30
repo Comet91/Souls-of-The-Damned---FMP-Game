@@ -213,7 +213,7 @@ public class GameStart : MonoBehaviour
         audioclip.Stop();
         yield return new WaitForSecondsRealtime(5);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
     }
 
