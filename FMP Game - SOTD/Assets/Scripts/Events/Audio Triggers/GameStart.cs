@@ -35,6 +35,7 @@ public class GameStart : MonoBehaviour
     private Text textObjective;
     private Text textShardsCollected;
     private Text textTimeLeft;
+    private Text textYouLose;
 
     //------------------------------------------------------------------------
 
@@ -60,10 +61,12 @@ public class GameStart : MonoBehaviour
         textObjective = GameObject.Find("Objective").GetComponent<Text>();
         textShardsCollected = GameObject.Find("Shards Collected").GetComponent<Text>();
         textTimeLeft = GameObject.Find("Time Left").GetComponent<Text>();
+        textYouLose = GameObject.Find("You Lose").GetComponent<Text>();
 
         textObjective.text = ("");
         textShardsCollected.text = ("");
         textTimeLeft.text = ("");
+        textYouLose.text = ("");
 
         gameHasStarted = false;
     }
@@ -192,6 +195,9 @@ public class GameStart : MonoBehaviour
                 textObjective.text = ("OBJECTIVE: " + "<color=white>" + "OBJECTIVE FAILED" + "</color>");
                 textShardsCollected.text = ("SOUL SHARDS COLLECTED: " + "<color=white>" + "ERROR" + "</color>");
                 textTimeLeft.text = ("TIME LEFT: <color=white>" + "ERROR" + "</color>");
+
+                textYouLose.text = ("YOU LOSE");
+
                 StartCoroutine(GameOver());
             }
         }
