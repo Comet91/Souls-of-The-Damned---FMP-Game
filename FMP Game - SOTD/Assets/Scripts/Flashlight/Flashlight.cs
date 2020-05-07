@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour
 {
 
     [SerializeField] 
-    private Light light;
+    public Light light;
     void Update()
     {
 

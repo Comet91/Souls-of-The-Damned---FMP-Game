@@ -6,7 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
-    [SerializeField] private float movementSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float sprintSpeed;
+
+    private float vertInput;
+    private float horizInput;
+    private float movementSpeed;
 
     public bool gameStarted;
 
@@ -35,6 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerMove()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = sprintSpeed;
+        }
+        else
+        {
+            movementSpeed = walkSpeed;
+        }
+
         float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
         float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
 

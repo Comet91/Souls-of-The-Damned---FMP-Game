@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HorrorWave : MonoBehaviour
 {
+    public AudioSource audioclip;
+
     public bool entered;
 
-    private bool checking;
+    private bool checking = true;
 
     void Update()
     {
@@ -15,8 +17,6 @@ public class HorrorWave : MonoBehaviour
             entered = GameObject.Find("Game Start Trigger").GetComponent<GameStart>().audioHorrorWaveHasPlayed;
         }
     }
-
-    public AudioSource audioclip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,7 +32,7 @@ public class HorrorWave : MonoBehaviour
             }
             else
             {
-                Debug.Log("Audio has been marked as played. Audio State: " + entered);
+                Debug.Log("[!] Horror Wave has been marked as played. Entered Audio State: " + entered);
             }
         }
     }

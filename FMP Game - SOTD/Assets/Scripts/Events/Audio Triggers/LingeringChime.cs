@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LingeringChime : MonoBehaviour
 {
+    public AudioSource audioclip;
+
     public bool entered;
 
-    private bool checking;
+    private bool checking = true;
 
     void Update()
     {
@@ -15,8 +17,6 @@ public class LingeringChime : MonoBehaviour
             entered = GameObject.Find("Game Start Trigger").GetComponent<GameStart>().audioLingeringChimeHasPlayed;
         }
     }
-
-    public AudioSource audioclip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,7 +32,7 @@ public class LingeringChime : MonoBehaviour
             }
             else
             {
-                Debug.Log("Audio has been marked as played. Audio State: " + entered);
+                Debug.Log("[!] Lingering Chime has been marked as played. Entered Audio State: " + entered);
             }
         }
     }

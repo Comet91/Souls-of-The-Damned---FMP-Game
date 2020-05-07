@@ -108,7 +108,7 @@ public class GameStart : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        // Checking if all audio triggers have played, and if not the games goal won't start
+        // Checking if all audio triggers have played, and if not, the games goal won't start
 
         if (other.tag == "Player")
         {
@@ -196,7 +196,7 @@ public class GameStart : MonoBehaviour
                 textShardsCollected.text = ("SOUL SHARDS COLLECTED: " + "<color=white>" + "ERROR" + "</color>");
                 textTimeLeft.text = ("TIME LEFT: <color=white>" + "ERROR" + "</color>");
 
-                textYouLose.text = ("YOU LOSE");
+                textYouLose.text = ("YOU LOST");
 
                 StartCoroutine(GameOver());
             }
@@ -213,7 +213,8 @@ public class GameStart : MonoBehaviour
         audioclip.Stop();
         yield return new WaitForSecondsRealtime(5);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 

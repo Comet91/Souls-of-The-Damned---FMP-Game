@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreamOne : MonoBehaviour
 {
     [SerializeField]
-    int flickeramount;
+    public int flickeramount;
 
     [SerializeField]
     public GameObject bloodstuff;
